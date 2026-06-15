@@ -1,0 +1,32 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node Dependencies & Build Output
+node_modules/
+.next/
+dist/
+build/
+out/
+.vercel
+
+# Uploads
+backend/uploads/
+
+# OS Files
+.DS_Store
+Thumbs.db
