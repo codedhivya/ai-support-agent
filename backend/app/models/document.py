@@ -23,10 +23,10 @@ class Document(Base):
         nullable=False
     )
 
-    # uploaded_by = Column(
-    #     UUID(as_uuid=True),
-    #     ForeignKey("users.id")
-    # )
+    uploaded_by = Column(
+        UUID(as_uuid=True),
+        ForeignKey("users.id")
+    )
 
     created_at = Column(
         DateTime(timezone=True),

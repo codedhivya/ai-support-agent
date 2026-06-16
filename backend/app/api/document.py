@@ -52,7 +52,7 @@ def get_documents(
 async def upload_document(
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
-   # current_user: User = Depends(get_current_user)*/
+    current_user: User = Depends(get_current_user)
 ):
 
     file_path = os.path.join(
@@ -70,7 +70,7 @@ async def upload_document(
         db=db,
         file_name=file.filename,
         file_path=file_path,
-       # uploaded_by=current_user.id
+        uploaded_by=current_user.id
     )
 
     text = extract_text(file_path)
@@ -94,7 +94,7 @@ async def upload_document(
 
         db.add(chunk_record)
 
-        embedding = generate_embedding (chunk)
+        embedding = await generate_embedding(chunk)
         embedding_record = DocumentEmbedding(
         document_id=document.id,
         chunk_index=index,
@@ -108,5 +108,5 @@ async def upload_document(
     return {
         "document_id": str(document.id),
         "file_name": document.file_name,
-       # "uploaded_by": str(current_user.id)
+        "uploaded_by": str(current_user.id)
     }

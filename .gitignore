@@ -30,3 +30,6 @@ backend/uploads/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Databases
+*.db

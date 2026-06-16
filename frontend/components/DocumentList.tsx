@@ -10,7 +10,7 @@ export default function DocumentList() {
     loadDocuments();
   }, []);
 
-   const loadDocuments = async () => {
+  const loadDocuments = async () => {
     try {
       const data = await getDocuments();
 
